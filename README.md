@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # EV Insights: Electric Vehicle Market Performance & Insights
 
 A static React + Vite website that presents a published Tableau Public dashboard and story about the electric vehicle market. It needs no backend, database, API keys or paid services, and is deployed with GitHub Pages and GitHub Actions only.
@@ -71,3 +72,6 @@ If the repository already has files, copy this project in without overwriting un
 =======
 # EV_Insights
 >>>>>>> d92e65b73cbe0d1246c8c9771ad0325ee06c8f10
+=======
+# ev_insights
+>>>>>>> 76971c4f1e0749323b7d9dbd3b4d6391c2b24ace
