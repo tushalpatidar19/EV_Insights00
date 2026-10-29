@@ -1,77 +1,61 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # EV Insights: Electric Vehicle Market Performance & Insights
 
-A static React + Vite website that presents a published Tableau Public dashboard and story about the electric vehicle market. It needs no backend, database, API keys or paid services, and is deployed with GitHub Pages and GitHub Actions only.
+A static React + Vite website presenting a published Tableau Public dashboard and story about the electric vehicle market. It needs no backend, database, API keys, or paid services, and can be deployed with GitHub Pages and GitHub Actions.
 
 ## Features
-- Responsive dark theme with mobile menu, active-section highlighting and keyboard-accessible navigation
-- Home, About, Dashboard, Story, Analytics features, Methodology, Technologies and Footer sections
-- Tableau dashboard embed with loading state, timeout hint and "open in new tab" button
-- Tableau story section driven by configuration (no invented URL)
-- No fabricated statistics: all numbers live inside your Tableau dashboard
+
+- Responsive dark theme with mobile menu, active-section highlighting, and keyboard-accessible navigation
+- Home, About, Dashboard, Story, Analytics features, Methodology, Technologies, and Footer sections
+- Tableau dashboard embed with loading state, timeout hint, and an "open in new tab" button
+- Tableau story section driven by configuration
+- No fabricated statistics: all numbers live inside the Tableau dashboard
 
 ## Technologies
-React 18, Vite 5, JavaScript, HTML5, CSS3, Tableau Public, GitHub, GitHub Pages.
 
-## Project structure
-```
-ev-insights/
-├── .github/workflows/deploy.yml   GitHub Pages deployment
-├── public/favicon.svg
-├── src/
-│   ├── components/                Navbar, Hero, About, Dashboard, Story,
-│   │                              AnalyticsFeatures, Methodology, TechStack,
-│   │                              Footer, TableauEmbed
-│   ├── config/tableau.js          Dashboard, Story and repository URLs
-│   ├── App.jsx  main.jsx  styles.css
-├── index.html  package.json  vite.config.js  .gitignore
-```
+React 18, Vite 5, JavaScript, HTML5, CSS3, Tableau Public, GitHub, and GitHub Pages.
 
-## Run locally (Windows, macOS, Linux)
-1. Install Node.js LTS from https://nodejs.org
-2. In the project folder run:
-```
+## Run locally
+
+Install Node.js LTS, then run these commands from the project directory:
+
+```sh
 npm install
 npm run dev
 ```
-3. Open the local URL printed in the terminal (usually http://localhost:5173).
 
-Production build: `npm run build` (output in `dist/`), preview it with `npm run preview`.
+Open the local URL printed in the terminal (usually `http://localhost:5173`).
+Run `npm run build` to create a production build in `dist/`, or `npm run preview`
+to preview it locally.
 
-## Configure Tableau and your repository
+## Configure Tableau
+
 Edit `src/config/tableau.js`:
-- `DASHBOARD.publicUrl` / `DASHBOARD.embedUrl`: already set to your published dashboard. If the embed does not load, open the dashboard on Tableau Public, choose **Share**, and copy the link or embed URL into `embedUrl`.
-- `STORY.publicUrl` / `STORY.embedUrl`: empty on purpose. Paste your published Story URLs; the embed and button then appear automatically.
-- `REPO_URL`: set to `https://github.com/<user>/<repo>` to show the footer GitHub link.
+
+- `DASHBOARD.publicUrl` and `DASHBOARD.embedUrl` point to the published dashboard. If the embed does not load, copy the link or embed URL from Tableau Public's **Share** menu.
+- `STORY.publicUrl` and `STORY.embedUrl` are empty until you publish a story. Add its URLs to show the story embed and button.
+- `REPO_URL` controls the GitHub link shown in the footer.
 
 ## Deploy to GitHub Pages
-1. Push this project to the `main` branch of your repository (see below).
-2. In the repository open **Settings > Pages**, and under **Build and deployment** set **Source** to **GitHub Actions**.
-3. The workflow in `.github/workflows/deploy.yml` runs on every push to `main`: it installs dependencies, builds, and deploys. Watch progress in the **Actions** tab.
-4. Your site will be at `https://<your-username>.github.io/<repository-name>/`.
 
-Vite uses `base: './'`, so asset paths are relative and work under any repository name.
+The workflow in `.github/workflows/deploy.yml` builds and deploys on pushes to
+`main`. In the repository, open **Settings > Pages** and set **Build and
+deployment > Source** to **GitHub Actions**. Watch deployment progress in the
+**Actions** tab. The site URL is
+`https://<your-username>.github.io/<repository-name>/`.
 
-### Upload to GitHub
-```
-git init
+Vite uses a relative base path so asset URLs work under a repository subpath.
+
+To push future changes from this checkout:
+
+```sh
 git add .
-git commit -m "Add EV Insights website"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<repository-name>.git
-git push -u origin main
+git commit -m "Describe your changes"
+git push origin main
 ```
-If the repository already has files, copy this project in without overwriting unrelated files, or run `git pull origin main --allow-unrelated-histories` first.
 
 ## Known limitations
+
 - Tableau Public decides whether a view can be embedded. Browsers cannot report cross-origin iframe errors, so the site shows a hint after 12 seconds if loading seems slow rather than detecting failure exactly.
-- Story embedding needs you to supply the published Story URL.
+- Story embedding requires the published Story URL.
 - The embedded Tableau content is not tested by the build; check it in a browser after deploying.
 - The site contains no dataset of its own, so it shows no charts beyond Tableau's.
-=======
-# EV_Insights
->>>>>>> d92e65b73cbe0d1246c8c9771ad0325ee06c8f10
-=======
-# ev_insights
->>>>>>> 76971c4f1e0749323b7d9dbd3b4d6391c2b24ace

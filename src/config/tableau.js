@@ -23,4 +23,4 @@ export const STORY = {
 
 // Add your GitHub repository URL, e.g. 'https://github.com/<user>/<repo>'.
 // The footer link is shown only when this is set.
-export const REPO_URL = 'https://github.com/Tarun03-pluto/EV_Insights';
+export const REPO_URL = 'https://github.com/tushalpatidar19/EV_Insights00';
